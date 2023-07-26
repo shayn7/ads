@@ -34,6 +34,12 @@ public class CampaignServiceImpl implements CampaignService {
         return mapToCampaignResponse(campaign, products);
     }
 
+    @Override
+    public Campaign getActiveCampaignWithHighestBid() {
+        List<Campaign> campaigns = campaignRepository.findValidCampaigns();
+        return campaignRepository.findHighestBid(campaigns);
+    }
+
     private Set<Product> getProducts(CampaignRequest campaignRequest) {
         Set<Long> productIds= new HashSet<>(campaignRequest.getProductIds());
         Set<Product> products = new HashSet<>();

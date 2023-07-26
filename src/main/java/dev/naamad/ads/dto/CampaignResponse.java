@@ -17,5 +17,4 @@ public class CampaignResponse {
     private int bid;
     private Date startDate;
     private Set<Product> products;
-
 }

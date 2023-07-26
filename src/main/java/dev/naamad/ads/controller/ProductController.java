@@ -16,9 +16,9 @@ public class ProductController {
     private final ProductService productService;
 
 
-    @GetMapping("/category/{category}")
-    @ResponseStatus(HttpStatus.OK)
-    public Product getProductByCategoryFromActiveCampaignWithHighestBid(@PathVariable("category") String category){
-        return productService.getProductByCategoryFromActiveCampaignWithHighestBid(category);
-    }
+//    @GetMapping("/category/{category}")
+//    @ResponseStatus(HttpStatus.OK)
+//    public Product getProductByCategoryFromActiveCampaignWithHighestBid(@PathVariable("category") String category){
+//        return productService.getProductByCategoryFromActiveCampaignWithHighestBid(category);
+//    }
 }

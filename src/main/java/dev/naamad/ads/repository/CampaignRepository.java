@@ -12,5 +12,7 @@ public interface CampaignRepository extends ListCrudRepository<Campaign, Long> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM tbl_campaign WHERE start_date > current_date OR start_date BETWEEN dateadd(day,-10,current_date) AND current_date;")
     List<Campaign> findValidCampaigns();
+    @Query(nativeQuery = true, value = "SELECT * FROM tbl_campaign WHERE bid = ( SELECT MAX(bid) FROM tbl_campaign );")
+    Campaign findHighestBid(List<Campaign> campaigns);
 
 }

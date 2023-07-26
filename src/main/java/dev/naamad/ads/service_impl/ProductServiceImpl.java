@@ -28,9 +28,15 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getProductByCategoryFromActiveCampaignWithHighestBid(String category) {
-
-        System.out.println(campaignRepository.findValidCampaigns());
-
         return null;
     }
+
+//    @Override
+//    public Product getProductByCategoryFromActiveCampaignWithHighestBid(String category) {
+//
+//        List<Campaign> campaigns = campaignRepository.findValidCampaigns();
+//        //campaigns.stream().filter(c -> c.getProducts().stream().filter(p -> p.getCategory().equals(category)))
+//        Campaign a = campaignRepository.findHighestBid(campaigns);
+//        return null;
+//    }
 }
